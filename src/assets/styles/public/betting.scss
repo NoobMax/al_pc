@@ -1,0 +1,69 @@
+.betting{
+    color:#666666;
+}
+.betting-content{
+    padding:30px 25px;
+}
+
+.betting h5{
+    font-size:16px;
+    color:#333;
+    padding:5px 10px;
+    background: #EFF6FF;
+    font-weight: normal;
+}
+
+.betting-content .betting-content-ul {
+    margin:15px 0;
+    color: #333;
+    .bettingliactive{
+        background:#1C4FA8;
+        color:#fff;
+    }
+    
+}
+.bettingli{
+    float:left;
+    border-radius:4px;
+    font-size:14px;
+    background:#F1F3F8;
+    padding:7px 20px;
+    color: #333;
+    margin-right:5px;
+    cursor:pointer;
+}
+
+
+
+
+.betting-content .el-table{
+    border: 1px solid rgba(221, 221, 221, 0.637);
+    border-bottom: 0;
+}
+.betting-content .all tr,.betting-content .yijie tr,.betting-content .weijie tr{
+    height:40px;
+}
+.betting-content th{
+    background:#F1F3F8;
+}
+
+.betting-content .el-table td,.betting-content .el-table th{
+    padding:3px 0;    
+}
+
+.betting-content h4 {
+    color: #f39700;
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.betting-content .hasClosedTitle{
+    color: #453880;
+}
+
+.betting-content .page{
+    margin-top: 30px;
+    text-align: center;
+}

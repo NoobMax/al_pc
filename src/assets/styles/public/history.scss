@@ -1,0 +1,194 @@
+$history-font__color: black;
+$history-title__color: #eff6ff;
+$history-title--date-picker__height: 30px;
+$history--lottery-picker__color: #f2f3f8;
+$history--lottery-picker__active-color: #1c4fa8;
+$history--lottery-picker__active-font-color: white;
+$history--number-picker__color: #b9b9b9;
+$history--number-picker__font-color: white;
+$history--number-picker__active-color: rgb(80, 81, 95);
+
+$history--number__text-color-style1: white;
+$history--number__color-style1: #e4b326,
+                                #008cff,
+                                #323057,
+                                #ff7600,
+                                #58a6a6,
+                                #5434ff,
+                                #b0b0b0,
+                                #f92a08,
+                                #700e01,
+                                #09be00;
+
+.history {
+  border-radius: 5px;
+  position: relative;
+  width: inherit;
+  & h5 {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: $history-font__color;
+    background-color: $history-title__color;
+    font-size: 110%;
+    @at-root {
+      .el-input__inner {
+        height: $history-title--date-picker__height;
+      }
+      .el-input__icon {
+        line-height: $history-title--date-picker__height;
+      }
+    }
+  }
+  &__lottery-picker {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+    a {
+      transition: all ease .5s;
+      border-radius: 5px; 
+      cursor: pointer;
+      padding: 5px 20px;
+      background-color: $history--lottery-picker__color; 
+      color: $history-font__color;
+      &:hover {
+        transition: all ease .5s;
+        background-color: $history--lottery-picker__active-color;
+        color: $history--lottery-picker__active-font-color;
+        
+      }
+      &.router-link-active {
+        background-color: $history--lottery-picker__active-color;
+        color: $history--lottery-picker__active-font-color;
+      }
+    }
+  }
+  &__result-area {
+    padding: 0px 20px;
+    table {
+      width: 100%;
+      text-align: center;
+      border: 1px solid darken($history--lottery-picker__color, 10%);
+      color: $history-font__color;
+      tr:nth-child(odd) {
+        background-color: #f8f9fb;
+      }
+      tr {
+        height: 34px;
+      }
+      th {
+        height: 36px;
+        background-color: $history--lottery-picker__color;
+      }
+      td {
+        height: 30px;
+        span {
+          display: inline-block;
+          font-size: 120%;
+          margin-right: 8px;
+          width:28px;
+          height: 28px;
+          line-height: 28px;
+          color: #fff;
+          &#plus {
+            color: black;
+          }
+          &.number-square {
+            border-radius: 5px;
+          }
+          &.number-ball {
+            box-shadow: 2px 2px 4px 0px rgba(16, 15, 15, 0.8);
+            border-radius: 100%;
+          }
+          &.number { 
+            background-color: #3e80d4;
+            &.cqxync.num-19, &.cqxync.num-20, 
+            &.gdklsf.num-19, &.gdklsf.num-20 {
+              background-color: red;
+            }
+          }
+          &.bigSmall {
+            &.big {
+              background-color: rgb(249, 152, 46);
+            }
+            &.small {
+              background-color: rgb(127, 138, 176);
+            }
+          }
+          &.oddEven {
+            &.odd {
+              background-color:  rgb(249, 152, 46);
+            }
+            &.even {
+              background-color: rgb(127, 138, 176);
+            }
+          }
+          &.marksix {
+            &.is-red { background-color: red; }
+            &.is-green { background-color: #7eb900; }
+            &.is-blue { background-color: #007fcd; }
+          }
+          &.pcdd {
+            display: inline-block;
+            background-color: #008cff;
+            border-radius: 100%;
+            width:28px;
+            height: 28px;
+            line-height: 28px;
+            @for $num from 0 to 28 {
+              @if $num == 0 or $num == 13 or $num == 14 or $num == 27 { &.num-#{$num} { background-color: #999; } }
+              @else {
+                @if $num % 3 == 0 { &.num-#{$num} { background-color: red; } }
+                @if $num % 3 == 1 { &.num-#{$num} { background-color: green; } }
+                @if $num % 3 == 2 { &.num-#{$num} { background-color: blue; } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @at-root {
+    .color-style1 {
+      color: $history--number__text-color-style1 !important;
+      //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      @for $num from 1 to length($history--number__color-style1) + 1 {
+        &.num-#{$num}, &.num-0#{$num} {
+          background-color: nth($history--number__color-style1, $num) !important;
+        }
+      }
+    }
+  }
+
+  &__number-style-picker{
+    span {
+      padding: 5px 10px;
+      border-radius: 5px;
+      line-height: 25px;
+      margin-left: 20px;
+      color: $history--number-picker__font-color;
+      background-color: $history--number-picker__color;
+      &.active {
+        background-color: $history--number-picker__active-color;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__page-control {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+}

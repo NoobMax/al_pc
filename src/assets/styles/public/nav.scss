@@ -1,0 +1,81 @@
+@import '../mixins';
+.cp-tabs__nav {
+  position: relative;
+  height: 35px;
+  margin-bottom: 5px;
+  box-shadow: 3px 2px 5px #cce2fe;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: url(formatUrl('/img/pc/static/images/ct/bg333.jpg')) repeat;
+}
+.cp-tabs__nav-item {
+padding: 0 19px;
+height: 35px;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+line-height: 32px;
+display: inline-block;
+list-style: none;
+font-size: 14px;
+font-weight: 400;
+color: #333;
+position: relative;
+overflow: hidden;
+.cp-tabs__nav-item-hr {
+  position: absolute;
+  background-color: #305eb2;
+  // transform: translateX(100%);
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+a {
+  color: rgba(51, 51, 51, .7);
+  &:hover {
+    color: #305eb2;
+    font-weight: 700;
+  }
+}
+&.is-active {
+  a {
+    color: #305eb2;
+    font-weight: 700;
+  }
+  .cp-tabs__nav-item-hr {
+    //transform: translateX(0);
+    width: 120%;
+  }
+}
+}
+.cp-tabs__subs {
+  position: absolute;
+  display: flex;
+  top: 40px;
+  left: 0;
+  right: 160px;
+  height: 30px;
+  background-color: #eff6ff;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.58);
+@at-root {
+  .cp-tabs__subs-item {
+    padding: 0 15px;
+    text-align: center;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    a {
+      color: #7b73be;
+    }
+    &.is-active {
+      background-color: #3e80d4;
+      a {
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+}

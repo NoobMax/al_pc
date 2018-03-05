@@ -1,0 +1,66 @@
+import Vue from 'vue'
+import {
+  Row,
+  Col,
+  Input,
+  Form,
+  FormItem,
+  Button,
+  Loading,
+  Menu,
+  MenuItem,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  Tabs,
+  TabPane,
+  Radio,
+  RadioGroup,
+  RadioButton,
+  CheckboxGroup,
+  Checkbox,
+  Dialog,
+  DatePicker,
+  Table,
+  TableColumn,
+  Pagination,
+  Carousel,
+  CarouselItem,
+  Select,
+  Option,
+  Steps,
+  Step
+} from 'element-ui'
+Vue.use(Dropdown)
+Vue.use(DropdownItem)
+Vue.use(DropdownMenu)
+Vue.use(Input)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Button)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Dialog)
+Vue.use(DatePicker)
+Vue.use(Checkbox)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Pagination)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(RadioButton)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Steps)
+Vue.use(Step)
+
+Vue.use(Loading.directive)
+Vue.prototype.$loading = Loading.service

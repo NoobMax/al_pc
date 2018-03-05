@@ -1,0 +1,898 @@
+@import '../mixins';
+.games-content {
+  height: 100%;
+  @at-root {
+    .games-betAreat {
+      display: flex;
+      height: calc(100% - 120px);
+      .games-betAreat__form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex: 1;
+        max-width: 910px;
+      }
+      @at-root {
+        .betArea-content {
+          display: flex;
+          flex: 1;
+          align-items: flex-start;
+          overflow: auto;
+          position: relative;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+.betArea-content__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.betArea-content__item {
+  &.is-full-20 {
+    flex: 1 0 20%;
+  }
+  &.is-full-100 {
+    flex: 1 0 100%;
+  }
+}
+.betArea-sub__content-list {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &.betArea-sub__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .betArea-sub__content-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.betArea-content__title {
+  position: relative;
+  height: 30px;
+  color: #3e80d4;
+  line-height: 30px;
+  background-color: #eff6ff;
+  text-align: center;
+}
+
+/*投注的input**/
+.games-input__item {
+  display: flex;
+  margin: 5px 0;
+  flex: 0 1 20%;
+  align-items: center;
+  &.is-flex-20 {
+    flex: 1 0 20%;
+  }
+  &.is-full-25 {
+    flex: 0 1 25%;
+  }
+  &.is-full-100 {
+    flex: 0 1 100%;
+  }
+  &.is-full-50 {
+    flex: 0 1 50%;
+    padding-right: 10px;
+  }
+  .games-input__odds {
+    margin: 0 5px;
+    flex: 0 0 44px;
+    text-align: center;
+    span {
+      color: #666;
+    }
+  }
+  .games-input__line {
+    flex: 0 1 180px;
+    input {
+      height: 24px;
+    }
+  }
+  .games-input__numbers {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    .games-input__numbers-item {
+      
+    }
+    &.is-last {
+      flex: 0 0 150px;
+    }
+  }
+}
+.games-input__title {
+  flex: 1 0 50px;
+  background-color: #3e80d4;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  height: 20px;
+  &.is-middle {
+    flex: 1 0 70px;
+  }
+  &.is-half {
+    flex: 0 1 70px;
+  }
+  &.is-dice {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    font-size: 0;
+  }
+}
+
+/*长龙*/
+.games-dragon {
+  
+}
+
+/**连码样式*/
+.betArea-check-odds {
+  display: flex;
+  flex-wrap: wrap;
+  .betArea-checkbox__group {
+    padding: 10px;
+    display: flex;
+    flex: 1 0 50%;
+    align-items: center;
+    &.is-full-20 {
+      flex: 0 1 20%;
+    }
+    &.group-wrap {
+      flex-wrap: wrap;
+    }
+    .betArea-checkbox__list {
+      width: 20%;
+      text-align: left;
+      margin-left: 0 !important;
+      &.is-other {
+        margin-bottom: 10px;
+      }
+      &.is-number {
+        .el-checkbox__label  {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgb(43, 137, 226);
+          align-items: center;
+          box-shadow: 2px 1px 2px 1px rgba(204, 204, 204, 0.74);
+        }
+        &.is-red {
+          .el-checkbox__label {
+            background-color: #eb6877;
+          }
+        }
+        &.is-blue {
+          .el-checkbox__label {
+            background-color: #3f80d4;
+          }
+        }
+        &.is-green {
+          .el-checkbox__label {
+            background-color: #7eb900;
+          }
+        }
+      }
+    }
+    .el-checkbox__label {
+      display: inline-flex;
+      width: 50px;
+      text-align: center;
+      background-color: #3e80d4;
+      color: #fff;
+      justify-content: center;
+      padding-left: 0;
+      border-radius: 5px;
+      margin-left: 15px;
+      height: 20px;
+    }
+    .games-input__odds {
+      flex: 0 0 80px;
+      text-align: center;
+      &.is-full-160 {
+        flex: 0 0 160px;
+      }
+      &.is-full-95 {
+        flex: 0 0 95px;
+      }
+      span {
+        font-size: 14px;
+        color: #666;
+      }
+    }
+    .games-input__numbers {
+      display: flex;
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// 提交按钮 样式
+.betArea-action {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-top: 1px solid rgba(204, 204, 204, 0.534);
+  margin-bottom: 5px;
+  @at-root {
+    .betArea-action__fast {
+      display: flex;
+      padding-left: 20px;
+      @at-root {
+        .betArea-action__default {
+          padding: 0 15px;
+          display: flex;
+          align-items: center;
+          .el-checkbox {
+            margin-right: 10px;
+          }
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: #3e80d4;
+          }
+          .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #3e80d4;
+            color: #3e80d4;
+            border-color: #3e80d4;
+          }
+          .el-checkbox__inner:hover {
+            border-color: #3e80d4;
+          }
+          .el-checkbox__input.is-focus .el-checkbox__inner {
+            border-color: #3e80d4;
+          }
+        }
+      }
+    }
+    .betArea-action__btnGroup {
+      button {
+        padding: 7px 50px;
+      }
+    }
+  }
+}
+
+/** 弹框对话框的样式**/
+.el-dialog__wrapper {
+  overflow: hidden;
+}
+.betArea-dialog.el-dialog {
+  width: 450px;
+  border-radius: 10px;
+  .el-dialog__header {
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #f1f3f8;
+    @at-root {
+      .el-dialog__title {
+        font-size: 16px;
+        line-height: 1;
+      }
+    }
+  }
+  .el-dialog__body {
+    padding: 20px;
+  }
+}
+.betArea-dialog__heading {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  @at-root {
+    .dialog-heading__number {
+      flex: 4;
+    }
+    .dialog-heading__odds {
+      flex: 1;
+      margin: 0 5px;
+    }
+    .dialog-heading__money {
+      flex: 2;
+    }
+    .dialog-heading__action {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
+.betArea-dialog__body {
+  max-height: 450px;
+  overflow: auto;
+  @at-root {
+    .betArea-dialog-body__item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+      .dialog-body__number {
+        flex: 4;
+      }
+      .dialog-body__pick-title {
+        flex: 0 1 70px;
+        text-align: left;
+      }
+      .dialog-body__pick {
+        flex: 3;
+      }
+      .dialog-body__money-title {
+        flex: 0 1 70px;
+        text-align: left;
+      }
+      .dialog-body__pick-money {
+        flex: 3;
+      }
+      .dialog-body__odds {
+        flex: 1;
+        margin: 0 5px;
+      }
+      .dialog-body__money {
+        flex: 2;
+      }
+      .dialog-body__action {
+        flex: 1;
+        text-align: center;
+        i {
+          cursor: pointer;
+          font-size: 18px;
+        }
+      }
+      .dialog-body__action img {
+        margin-top: 5px;   
+      }
+    }
+  }
+}
+.betArea-dialog__footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.betArea-dialog__actions {
+  margin-top: 20px;
+  display: flex;
+  @at-root {
+    .dialog-actions__cancel {
+    flex: 1;
+    @extend .betArea-btnGroup__reset;
+    padding: 8px 0;
+    }
+    .dialog-actions__confirm {
+      flex:1;
+      @extend .betArea-btnGroup__submit;
+      padding: 8px 0;
+      &.is-disabled {
+        cursor: no-drop;
+        &:hover {
+          background-color: rgba(235, 104, 119, 1)
+        }
+      }
+    }
+  }
+}
+
+/**游戏头部**/
+.game-header {
+  height: 80px;
+  background: url(formatUrl('/img/pc/static/images/ct/bg-top.jpg')) no-repeat; // 替换的
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @at-root {
+    .game-header__left {
+      display: flex;
+      height: 100%;
+      flex: 1;
+      justify-content: flex-start;
+      border-right: 1px solid rgba(204, 204, 204, 0.466);
+      @at-root {
+        .game-header__left-image {
+          padding-left: 15px;
+          i {
+            display: flex;
+            width: 120px;
+            height: 80px;
+            background: url(formatUrl('/img/pc/static/images/common/ico-top-pk10.png')) no-repeat;
+            &.is-pk10 {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-pk10.png')) no-repeat;
+            }
+            &.is-cqssc {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-cqssc.png')) no-repeat;
+            }
+            &.is-marksix {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-six.png')) no-repeat;
+            }
+            &.is-pcegg {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-pcegg.png')) no-repeat;
+            }
+            &.is-xyft {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-ship.png')) no-repeat;
+            }
+            &.is-klsf {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-ten.png')) no-repeat;
+            }
+            &.is-xync {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-farm.png')) no-repeat;
+            }
+            &.is-dice {
+              background: url(formatUrl('/img/pc/static/images/common/ico-top-jsks.png')) no-repeat;
+            }
+          }
+        }
+        .game-header__left-currentRound {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 1 0 100px;
+          span, p {
+            color: #fff;
+          }
+        }
+        .game-header__left-timer {
+          display: flex;
+          flex: 6;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .game-header__timer-close {
+          display: flex;
+          margin-top: 10px;
+          align-items: center;
+          >div {
+            height: 30px;
+            border-radius: 3px;
+            font-size: 24px;
+            background-color: #333;
+            color: #fff;
+            margin: 0 3px;
+            line-height: 30px;
+            /* height: 28px; */
+            padding: 0 2px;
+          }
+          span {
+            font-size: 22px;
+            color: #fff;
+            display: inline-flex;
+            margin-top: -5px;
+          }
+        }
+        .game-header__timer-lottery {
+          display: flex;
+        }
+        .game-header__text-close {
+          display: flex;
+          margin-top: 10px;
+          >div {
+            height: 30px;
+            border-radius: 3px;
+            font-size: 24px;
+            background-color: #333;
+            margin: 0 3px;
+            line-height: 30px;
+            /* height: 28px; */
+            padding: 0 2px;
+          }
+          .game-close__text {
+            
+          }
+        }
+        .game-header__timer-lottery {
+          span{
+            color: #fff;
+            font-size: 18px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .game-header__right {
+      display: flex;
+      height: 100%;
+      flex: 0 0 50px;
+      position: relative;
+      .game-header__right-ten {
+        height: 80px;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        bottom: 0;
+        border-left: 1px solid rgba(204, 204, 204, 0.329);
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+        >div {
+          width: 14px;
+          font-size: 12px;
+          line-height: 1.2;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+     
+    .game-header__middle {
+      display: flex;
+      flex: 1.3;
+      height: 100%;
+      justify-content: space-around;
+      @at-root {
+        .game-header__middle-prevRound {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 0 0 110px;
+          margin-left: 20px;
+          p, a {
+            color: #fff;
+          }
+        }
+        .game-header__middle-numbers {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 1;
+          overflow: hidden;
+          margin-left: 10px;
+          @at-root {
+            .lottery-header-middle__round {
+              display: flex;
+              margin: 5px 0;
+            }
+            .lottery-header-middle__message {
+              display: flex;
+              padding-left: 6px;
+              margin-top: 3px;
+              width: 440px;
+              span {
+                white-space:nowrap;
+              }
+            }
+            .header-middle__message-left {
+              display: flex;
+              span {
+                color: #fff;
+              }
+              .header-message__left-numbers {
+                display: flex;
+                color: #fff;
+              }
+            }
+            .header-middle__message-right {
+              display: flex;
+              margin-left: 10px;
+              span {
+                color: #fff;
+              }
+              .header-message__right-numbers {
+                display: flex;
+                color: #fff;
+              }
+            }
+            .header-middle__message-middle {
+              display: flex;
+              margin-left: 10px;
+              span {
+                color: #fff;
+              }
+              .header-message__middle-numbers {
+                display: flex;
+                color: #fff;
+              }
+            }
+            .header-message__number {
+              height: 20px;
+              padding: 0 5px;
+              background-color: #366fbe;
+              text-align: center;
+              margin: 0 3px;
+              border-radius: 3px;
+            }
+            .lottery-middle__rounds {
+              display: flex;
+              align-items: center;
+              span {
+                font-size: 24px;
+                color: #fff;
+              }
+            }
+            .lottery-eq {
+              display: flex;
+              align-items: center;
+              span {
+                font-size: 24px;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*投注记录*/
+.betslip-dialog {
+  /* position: fixed;
+  right: 0;
+  bottom: 100px;
+  z-index: 400;
+  width: 235px;
+  top: 70px; */
+  @at-root {
+    .betslip-dialog__content {
+      display: flex;
+      position: fixed;
+      right: 0;
+      bottom: 160px;
+      width: 235px;
+      border-radius: 5px;
+      flex-direction: column;
+      top: 70px;
+      z-index: 2500;
+      box-shadow: -2px 3px 6px 0px rgba(0, 0, 0, 0.32);
+      border-radius: 10px;
+      .betslip-dialog__content-heading {
+        flex: 0 0 35px;
+        line-height: 35px;
+        background-color: #2866b4;
+        border-top-left-radius: 10px;
+        padding-left: 10px;
+        h3 {
+          font-size: 16px;
+          color: #fff;
+        }
+      }
+      .betslip-dialog__content-body {
+        flex: 1;
+        background-color: #f0f0f6;
+        overflow: auto;
+        .betslip-dialog__content-hint {
+          text-align: center;
+          color: #999;
+          padding-top: 10px;
+        }
+      }
+      .betslip-dialog__content-footer {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 100%;
+        background-color: #f0f0f6;
+        border-top: 1px solid rgba(109, 109, 109, 0.267);
+        border-bottom-left-radius: 10px;
+        a {
+          color: #666;
+          font-weight: 400;
+
+        }
+      }
+    }
+  }
+  .betslip-dialog__action {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    right: 0;
+    width: 235px;
+    z-index: 200;
+    align-items: center;
+    background-color: #1c4fa8;
+    border-top-left-radius: 12px;
+    bottom: 100px;
+    border-bottom-left-radius: 12px;
+    transition: all .4s ease;
+    &.is-close {
+      width: 125px;
+    }
+    .betslip-dialog__action-left {
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+      i {
+        font-size: 24px;
+        cursor: pointer;
+        transition: all .4s ease;
+      }
+    }
+    .betslip-dialog__action-middle {
+      padding-right:10px;
+      height: 100%;
+      border-left: 1px solid rgba(235, 235, 235, 0.219);
+      border-right: 1px solid rgba(236, 236, 236, 0.205);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      flex: 1;
+      transition: all .4s ease;
+      .betslip-action__middle-cart {
+        flex: 0 0 30px;
+        padding: 0 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        opacity: .7;
+        &:hover {
+          opacity: 1;
+        }
+        i {
+          cursor: pointer;
+          display: inline-flex;
+          width: 30px;
+          height: 30px;
+          background: url(formatUrl('/img/pc/static/images/common/icon/ico-right-weijie.png')) no-repeat;
+        }
+      }
+      .betslip-action__middle-caption {
+        text-align: center;
+        span {
+          color: #eb6877;
+        }
+        p, span {
+          white-space: nowrap;
+        }
+      }
+    }
+    .betslip-dialog__action-right {
+      padding: 0 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      opacity: .7;
+      width: 50px;
+      &:hover {
+        opacity: 1;
+      }
+      i {
+        cursor: pointer;
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        background: url(formatUrl('/img/pc/static/images//common/icon/ico-right-cs.png')) no-repeat;
+      }
+    }
+  }
+}
+
+
+// 长龙
+.games-dragon {
+  height: 100%;
+  overflow: hidden;
+  margin-left: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  flex: 0 0 155px;
+  width: 155px;
+}
+.games-dragon__title {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #eff6ff;
+  span {
+    color: #3e80d4;
+  }
+}
+.games-dragon__content {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  > p {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+  }
+  .dragon-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px;
+    span, p {
+      color: #999;
+      font-size: 12px;
+    }
+  }
+}
+
+
+/*未结订单**/
+.unset-order__item {
+  display: flex;
+  padding: 10px 2px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.51);
+  &:last-child {
+    border-bottom: 0;
+  }
+  .unset-order__media {
+    flex: 0 0 50px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  .unset-order__content {
+    display: flex;
+    flex-direction: column;
+    .unset-order__title {
+      span {
+        color: #3e80d4;
+      }
+    }
+    .unset-order__date {
+      span {
+        font-size: 12px;
+        color: #3e80d4;
+      }
+    }
+    .unset-order__number {
+      span {
+        color: #666;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//近十期开奖
+.game-header .el-dialog{
+  width:690px;
+  border-radius:10px;
+  .el-dialog__header{
+    background:#f1f3f8;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+  }
+}
+
+
+/**露珠*/
+
+.games-dewdrop {
+  flex: 0 0 125px;
+  height: 125px;
+  overflow: auto;
+  margin-top: auto;
+  padding-left: 5px;
+  background-color: #fff;
+  max-width: 991px;
+  overflow-x: auto;
+  .el-tabs__header {
+    margin-bottom: 0;
+  }
+  .el-tab-pane {
+    height: 85px;
+    overflow: auto;
+  }
+  
+}
+.dewdrop-list {
+  display: flex;
+  .dewdrop-content__item {
+    flex: 1;
+    text-align: center;
+    padding-top: 5px;
+    min-height: 85px;
+    &.is-even {
+      background-color: #f9f9fc;
+    }
+    .drwdrop-item__text {
+      text-align: center;
+      font-size: 16px;
+      height: 20px;
+      line-height: 20px;
+      color: #666;
+    }
+  }
+}

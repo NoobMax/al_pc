@@ -1,0 +1,76 @@
+@import '../mixins';
+
+.banks-body__hint {
+  padding-left: 30px;
+  margin-top: 10px;
+  color: #453880;
+}
+.banks-body__content {
+  border: 1px solid rgba(204, 204, 204, 0.253);
+  border-radius: 5px;
+  margin: 20px;
+  margin-top: 10px;
+  .el-form {
+    padding: 10px 0;
+    padding-bottom: 0;
+  }
+  h4 {
+    margin: 10px 20px;
+  }
+  @at-root {
+    .banks-body__heading {
+      background-color: rgb(247, 250, 251);
+      line-height: 36px;
+      border-bottom: 1px solid rgba(204, 204, 204, 0.253);
+      padding-left: 20px;
+      span {
+        color: #666;
+      }
+    }
+    .banks-body__btn {
+      border-top: 1px solid rgba(204, 204, 204, 0.253);
+      line-height: 70px;
+      text-align: center;
+      button {
+        padding: 10px 50px;
+      }  
+    }
+  }
+}
+.banks-footer {
+  padding: 10px;
+}
+
+.money-withdrawal__update {
+  display: flex;
+  flex-direction: column;
+
+  .money-withrawal__update-text {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      color: #3d83dc;
+      &:hover {
+        color: rgba(#3d83dc, .7);
+      }
+    }
+  }
+  .money-withrawal__update-content {
+    display: flex;
+    justify-content: center;
+    .money-withrawal__update-bank {
+      display: flex;
+      align-items: center;
+      padding: 4px 6em;
+      border: 1px solid rgba(204, 204, 204, 0.226);
+      border-radius: 5px;
+      span {
+        margin: 0 10px;
+        color: #1c4fa8;
+      }
+      p {
+        color: #1c4fa8;
+      }
+    }
+  }
+}

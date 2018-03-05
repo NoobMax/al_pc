@@ -1,0 +1,5 @@
+@import './variable';
+
+@function formatUrl ($path) {
+  @return $publicImg + $path;
+}

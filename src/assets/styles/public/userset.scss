@@ -1,0 +1,77 @@
+.userset{
+    color:#666666;
+}
+.userset-content{
+    padding:0 15px;
+}
+
+.userset h5{
+    font-size:16px;
+    color:#333;
+    padding:5px 10px;
+    background: #EFF6FF;
+    font-weight: normal;
+}
+.userset-box img{
+    background:#2D2D3A;
+     border-radius:100%;
+     float:left;
+     display: block;
+     width:67px;
+     height:67px;
+     padding:5px 5px 15px 5px;
+}
+.userset-box p{
+    margin-left:80px;
+    width: 300px;
+}
+.userset-box p:nth-child(2){
+    padding-top:8px;
+}
+.userset-hottitle{
+    margin-top:10px;
+    padding-top:15px;
+    font-size:16px;
+    font-weight: normal;
+}
+
+.userset-content ul {
+    margin:15px 0;
+    li.usersetliactive{
+        background:#1C4FA8;
+        a {
+            color: #fff;
+        }
+    }
+    .usersetli{
+        float:left;
+        border-radius:4px;
+        font-size:14px;
+        background:#F1F3F8;
+        padding:7px 20px;
+        margin-right:5px;
+        cursor:pointer;
+        a {
+            color: #333;
+        }
+    }
+}
+
+
+.userset-content .el-table{
+    border:1px solid #DDDDDD;
+    border-bottom:4px solid #DDDDDD;
+}
+
+.userset-content th{
+    background:#F1F3F8;
+}
+
+.userset-content .el-table td,.userset-content .el-table th{
+    padding:5px 0;
+}
+
+
+
+
+

@@ -1,0 +1,476 @@
+@import '../mixins';
+#swal2-title{font-size:18px;}
+#app {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.cp-header__container {
+  width: 100%;
+  flex: 0 0 60px;
+  height: 60px;
+  background: url(formatUrl('/img/pc/static/images/ct/bg-header.jpg')) no-repeat;
+  background-size: cover;
+}
+
+.cp-home__container {
+  // max-width: $container_width;
+  width: 1260px;
+  margin: 0 auto;
+  padding-top: 5px;
+  flex: 1;
+  // height: calc(100vh - 60px);
+  padding-bottom: 5px;
+  position: relative;
+  display: flex;
+  max-height: 100%;
+  overflow-x: hidden;
+  .cp-home__main {
+    width: 1070px;
+    margin-left: 10px;
+  }
+}
+/**三角形**/
+.triangle-icon__default {
+  border: 6px solid transparent;
+  border-right-color: rgba(255, 255, 255, .6);
+  position: absolute;
+  transition: all .4s ease;
+}
+.triangle-icon {
+  @extend .triangle-icon__default;
+  left: -12px;
+  &.top {
+    top: 20px;
+  }
+  &.bottom {
+    top: 65px;
+  }
+}
+.triangle-icon__games {
+  position: absolute;
+  bottom: -14px;
+  border-top-color: #eff6ff;
+  border-width: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-wrapper__content {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.home-wrapper__title {
+  height: 36px;
+  line-height: 36px;
+  background-color: #eff6ff;
+  color: #333;
+  padding: 0 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+@for $i from 1 through 6 {
+  .dice-default__#{$i} {
+    height: 22px;
+    width: 22px;
+    background: url($dice_imgs) no-repeat;
+    background-position: center #{($i - 1) * -24px};
+    border: 1px solid rgba(62, 128, 212, 0.53);
+    border-radius: 5px !important;
+    margin: 0 2px !important;
+    font-size: 0;
+  }
+}
+
+
+
+/*球的样式**/
+.cp-client.ball-default {  
+  width: 24px;
+  flex: 0 0 24px;
+  height: 24px;
+  margin: 0 3px;
+  border-radius: 50%;
+  background-color: rgb(43, 137, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 1px 2px 1px rgba(47, 47, 47, .3);
+  span {
+    color: #fff;
+  }
+  &.setegg_0,
+  &.setegg_13,
+  &.setegg_14,
+  &.setegg_27{
+    background-color: #CCCCCC;
+  }
+  &.setegg_1,
+  &.setegg_4,
+  &.setegg_7,
+  &.setegg_10,&.setegg_16,&.setegg_19,&.setegg_22,&.setegg_25 {
+    background-color: #7EB900;
+  }
+  &.setegg_2,
+  &.setegg_5,
+  &.setegg_8,
+  &.setegg_11,&.setegg_17,&.setegg_20,&.setegg_23,&.setegg_26 {
+    background-color: #0000FF;
+  }
+  &.setegg_3,
+  &.setegg_6,
+  &.setegg_9,
+  &.setegg_12,&.setegg_15,&.setegg_18,&.setegg_21,&.setegg_24 {
+    background-color: #FF0000;
+  }
+  &.is-rect {
+    width: 32px;
+    flex: 0 0 32px;
+    height: 32px;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 5px;
+    @for $num from 1 to length($ball_number_color) + 1 {
+      &.ball-default__#{$num} {
+        background-color: nth($ball_number_color, $num);
+      }
+    }  
+  
+    // &.ball-default__11,
+    // &.ball-default__1 {
+    //   background-color: #e6b525;
+    // }
+    // &.ball-default__12,
+    // &.ball-default__2 {
+    //   background-color: #008fff;
+    // }
+    // &.ball-default__13,
+    // &.ball-default__3 {
+    //   background-color: #313055;
+    // }
+    // &.ball-default__14,
+    // &.ball-default__4{
+    //   background-color: #ff7600;
+    // }
+    // &.ball-default__15,
+    // &.ball-default__5{
+    //   background-color: #65a9aa;
+    // }
+    // &.ball-default__16,
+    // &.ball-default__6{
+    //   background-color: #5234ff;
+    // }
+    // &.ball-default__17,
+    // &.ball-default__7{
+    //   background-color: #806e6e;
+    // }
+    // &.ball-default__18,
+    // &.ball-default__8{
+    //   background-color: #ff2600;
+    // }
+    // &.ball-default__19,
+    // &.ball-default__9{
+    //   background-color: #730b00;
+    // }
+    // &.ball-default__20,
+    // &.ball-default__10{
+    //   background-color: #07bf00;
+    // }
+  }
+  &.is-large {
+    width: 32px;
+    flex: 0 0 32px;
+    height: 32px;
+    font-size: 24px;
+    color: #fff;
+  }
+  &.is-red {
+    background-color: #eb6877;
+  }
+  &.is-blue {
+    background-color: #3f80d4;
+  }
+  &.is-green {
+    background-color: #7eb900;
+  }
+}
+
+/**按钮样式*/
+.btn-inline__default {
+  border: 0;
+  color: #fff;
+  padding: 7px 20px;
+  transition: all .3s ease;
+  font-size: 16px;
+  background-color: #1561e5;
+  cursor: pointer;
+  &.betArea-btnGroup__reset {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.28);
+    margin-right: -3px;
+  }
+  &:hover {
+    background-color: rgba(#1561e5, .8);
+  }
+  &.betArea-btnGroup__submit {
+    background-color: #ff9200;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: -1px 1px 3px 0px rgba(0, 0, 0, 0.28);
+    &:hover {
+      background-color: rgba(#ff9200, .8);
+    }
+  }
+}
+.btn-block__default {
+  @extend .btn-inline__default;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 2px 1px 2px 1px rgba(49, 49, 49, .3);
+  &.btn-block__submit {
+    border-radius: 30px;
+    &:hover {
+      background-color: rgba(#3e80d4, 0.9);
+    }
+  }
+}
+
+
+
+
+
+/*球的颜色**/
+.ball-default__rect {
+  width: 32px;
+  height: 32px;
+  background-color: #3e80d4;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin: 0 3px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.151);
+  &.ball-default__11,
+  &.ball-default__1 {
+    background-color: #e6b525;
+  }
+  &.ball-default__12,
+  &.ball-default__2 {
+    background-color: #008fff;
+  }
+  &.ball-default__13,
+  &.ball-default__3 {
+    background-color: #313055;
+  }
+  &.ball-default__14,
+  &.ball-default__4{
+    background-color: #ff7600;
+  }
+  &.ball-default__15,
+  &.ball-default__5{
+    background-color: #65a9aa;
+  }
+  &.ball-default__16,
+  &.ball-default__6{
+    background-color: #5234ff;
+  }
+  &.ball-default__17,
+  &.ball-default__7{
+    background-color: #806e6e;
+  }
+  &.ball-default__18,
+  &.ball-default__8{
+    background-color: #ff2600;
+  }
+  &.ball-default__19,
+  &.ball-default__9{
+    background-color: #730b00;
+  }
+  &.ball-default__20,
+  &.ball-default__10{
+    background-color: #07bf00;
+  }
+}
+
+.hvr-bounce-in {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+
+
+/**加载动画**/
+.spinner-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+  .spinner-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #3e80d4, $alpha: .7);
+  }
+  .spinner-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/**图标*/
+%client-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  margin-top: 3px;
+}
+.icon-user {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-user.png')) no-repeat;
+}
+.icon-pwd {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-pwd.png')) no-repeat;
+}
+.icon-pwd-re {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-pwd-re.png')) no-repeat;
+}
+.icon-pwd-old {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-pwd-old.png')) no-repeat;
+}
+.icon-pwd-new {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-pwd-new.png')) no-repeat;
+}
+.icon-realname {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-name.png')) no-repeat;
+}
+.icon-pay {
+  @extend %client-icon;
+  background: url(formatUrl('/img/pc/static/images/common/icon/ico-my-pwd-pay.png')) no-repeat;
+}
+
+/*inpt*/
+.form-dialog {
+  &.el-dialog {
+    max-width: 350px;
+    border-radius: 10px;
+    .el-dialog__header {
+      padding: 10px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: #f1f3f8;
+    }
+    .el-dialog__body {
+      padding: 10px 30px;
+    }
+  }
+}
+.form-dialog__body {
+  .el-input--prefix {
+    .el-input__inner {
+      padding-left: 40px;
+    }
+  }
+  .el-input__inner {
+    border: 0;
+    border-bottom: 1px solid #dcdfe6;
+    border-radius: 0;
+  }
+}
+.form-dialog__footer {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+  border-top: 1px solid #dcdfe6;
+  position: relative;
+  top: 10px;
+  height: 30px;
+  line-height: 40px;
+  span {
+    opacity: .5;
+    font-size: 14px;
+  }
+  a {
+    color: #eb6877;
+    font-size: 14px;
+    &:hover {
+      color: rgba(#eb6877, .9);
+    }
+  }
+}
+
+.swal2-container {
+  z-index: 3000 !important;
+}
+
+/**教程对话框样式*/
+.tutorial-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  .tutorial-dialog__mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .tutorial-dialog__content {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 600;
+    .tutorial-dialog__img {
+      width: 1043px;
+      height: 725px;
+      background: url('./assets/images/ct/iosapp.png') no-repeat;
+      &.is-ios {
+        background: url('./assets/images/ct/iosapp.png') no-repeat;
+      }
+      &.is-adrid {
+        background: url('./assets/images/ct/adrid.png') no-repeat;
+      }
+    }
+  }
+}
+
+
+/**底部*/
+.cp-footer {
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #fff;
+  span {
+    color: #999;
+  }
+}

@@ -1,0 +1,348 @@
+@import '../mixins';
+
+
+.money-wrapper__steps {
+  padding: 1px 30px;
+  margin: 15px 0;
+}
+
+/**充值方式*/
+
+.money-payType__list {
+  display: flex;
+  margin: 0 20px;
+  @at-root {
+    .money-payType__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      padding: 24px 0;
+      width: 24%;
+      margin: 6.5px;
+      &:nth-of-type(1) {
+        margin-left: 0;
+        background-color: rgb(25, 116, 108);
+      }
+      &:nth-of-type(2) {
+        background-color: rgb(0, 167, 242);
+      }
+      &:nth-of-type(3) {
+        background-color: rgb(35, 172, 56);
+      }
+      &:nth-of-type(4) {
+        background-color: rgb(114, 111, 177);
+      }
+      &:nth-of-type(5) {
+        background-color: rgb(255, 102, 0);
+      }
+      @at-root {
+        .money-payType__item-body {
+          text-align: center;
+          >div {
+            color: #fff;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+/*充值方式 底部*/
+.money-payType__item-footer {
+  margin: 0 20px;
+  .el-radio-button {
+    &:nth-of-type(3) {
+      padding-left: 10px;
+    }
+    &:nth-of-type(5) {
+      margin-left: 10px;
+    }
+    &:nth-of-type(7) {
+      margin-left: 10px;
+    }
+    &:nth-of-type(9) {
+      margin-left: 10px;
+    }
+  }
+  @at-root {
+    .money-payType__text {
+      margin-top: 20px;
+      p,h4,h5 {
+        line-height: 2;
+      }
+      h4,h5 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+    }
+  }
+}
+
+/*选择银行*/
+.money-bank__title {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.bank-money-recharge {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  .bank-money-hint {
+    position: relative;
+    line-height: 36px;
+    background-color: rgb(241,243,248);
+    border: 1px solid rgb(230, 230, 240);
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-left: 20px;
+    span {
+      color: #7b73be;
+    }
+    .money-hint__triangle {
+      border-right-color: rgb(230, 230, 240);
+      top: 50%;
+      left: -13px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+/**状态按钮*/
+.cp-status-default {
+  width: 60px;
+  color: #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+.cp-status-info {
+  @extend .cp-status-default;
+  background-color: #453880;
+  cursor: pointer;
+}
+.cp-status-error {
+  @extend .cp-status-default;
+  background-color: #eb6877;
+}
+.cp-status-success {
+  @extend .cp-status-default;
+  background-color: rgb(97, 155, 174);
+}
+.cp-status-cancel {
+  @extend .cp-status-default;
+  background-color: #737373;
+}
+
+.money-sub-title{
+  padding-left: 20px;
+  width: 100%;
+  height: 40px;
+  display:flex;
+  display: -webkit-flex;
+  align-items: center;
+  border-top: 1px solid rgba(204, 204, 204, 0.52);
+  border-bottom: 1px solid rgba(204, 204, 204, 0.52);
+  img {
+    vertical-align: middle;
+    margin-top: -3px;
+  }
+  span {
+    color: #3d83dc;
+    margin-left: 5px;
+  }
+}
+
+/*提现*/
+.money-withdrawal {
+  padding: 10px 30px;
+}
+.money-withdrawal__form {
+  .el-form-item {
+    margin-bottom: 0;
+    .el-form-item__error {
+      margin-left: 120px;
+    }
+  }
+}
+
+.money-withdrawal__addbank {
+  padding: 10px 0;
+  @at-root {
+    .money-withdrawal__addbank-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.money-withdrawal__input {
+  padding: 15px;
+  >h4 {
+    padding-left: 12px;
+    margin-bottom: 10px;
+    color: #666;
+  }
+}
+.money-withdrawal__addbank-btn {
+  text-align: center;
+}
+.money-withdrawal__pwd {
+  padding: 0 15px;
+  span {
+    color: #666;
+  }
+}
+.money-withdrawal__btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  button {
+    padding: 10px 50px;
+  }
+}
+.money-history {
+  padding-bottom: 20px;
+}
+
+/**步骤条样式*/
+.money-wrapper__steps {
+  .el-step__head{
+    &.is-process {
+      color: #86bbff;
+      border-color: #86bbff;
+    }
+    &.is-success {
+      color: #86bbff;
+      border-color: #86bbff;
+    }
+  }
+  .el-step__title {
+    &.is-process {
+      color: #86bbff;
+    }
+    &.is-success {
+      color: #86bbff;
+    }
+  }
+  
+}
+
+.money-recharge__bank {
+  flex: 1;
+  padding-bottom: 20px; 
+}
+ 
+#copynumber {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-indent: -9999px;
+  font-size: 0;
+  // background-image: url(assets/images/ico-copy.png);  
+} 
+.money-withdrawal__hint {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    color: #453880;
+    margin: 10px 0;
+  }
+}
+
+/*线下支付*/
+.offline-bank-content {
+
+}
+.money-recharge__type {
+  padding: 10px 20px;
+}
+.money-banks__content {
+  border: 1px solid rgba(204, 204, 204, 0.315);
+  border-radius: 5px;
+  .money-banks__heading {
+    line-height: 40px;
+    background-color: rgb(247, 250, 251);
+    padding-left: 15px;
+    h4 {
+      color: #333;
+      font-size: 14px;
+    }
+  }
+  .el-form {
+    padding-top: 15px;
+  }
+}
+.money-recharge__current {
+  padding: 10px 20px;
+}
+.offline-bank__hint {
+  margin: 10px 0;
+  padding-left: 2px;
+  line-height: 1.8;
+  h4 {
+    color: #333;
+  }
+  p {
+    color: #666;
+  }
+}
+
+
+.money-menu__list {
+  display: flex;
+  background-color: #3d83dc;
+  line-height: 40px;
+  @at-root {
+    .money-menu__item {
+      position: relative;
+      overflow: hidden;
+      a {
+        padding: 10px 20px;
+        color: #fff;
+        &.is-active {
+          background-color: #1c4fa8;
+        }
+      }
+      i {
+          position: absolute;
+          bottom: 0;
+          border-right-color: transparent;
+          left: 110px;
+          border-bottom-color: #fff;
+          transform: translateX(-50%);
+      }
+      &.is-active {
+        i {
+          left: 50%;
+        }
+      }
+    }
+  }
+}
+.offline-banks__form {
+  button {
+    padding: 10px 50px;
+  }
+}
+
+/*额度转换*/
+.money-banks__transform {
+  padding: 15px;
+}
+.money-banks__form {
+  padding: 15px 20px;
+}
+.money-banks__form-item {
+  display: flex;
+  align-items: center;
+  >span {
+   color: #666;
+   margin-right: 20px; 
+  }
+}

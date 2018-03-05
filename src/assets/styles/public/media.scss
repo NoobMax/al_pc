@@ -1,0 +1,125 @@
+@import '../mixins';
+.media-container {
+    margin: 0 auto;
+    padding-top: 5px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 5px;
+    position: relative;
+    display: flex;
+    max-height: 100%;
+    overflow-x: hidden;
+    background:#DEEDFF;
+}
+.media{
+    width:1260px;
+    height: 100%;
+    min-height:760px;
+    margin:0 auto;
+    background:url('./assets/images/public/media/bg-ag.png') no-repeat center 130px;    
+}
+
+.media-logo,.media-nav{
+    margin-top:40px;
+}
+
+.media-logo{
+    width:404px;
+    height:71px;
+    float:left;
+    background: url('./assets/images/public/media/logo-ag.png') no-repeat;
+    animation-duration: 1s;
+    animation-name: fadeInLeft;
+}
+
+.media-nav{
+    height:68px;
+    float:right;
+    width:737px; 
+    animation-duration: 1s;
+    animation-name: fadeInRight;   
+}
+
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+.media-nav p{
+    float:left;    
+    height:100%;
+    padding-left:45px;
+    padding-top:17px;
+    font-style: italic;
+    font-size: 18px;
+    color:#3892E6;
+    cursor: pointer;
+}
+
+.media-nav p.media-nav-Balance{
+    text-align:center;
+    width:267px;
+    background: url(formatUrl('/img/pc/static/images/common/btn-bg-left.png'));
+    cursor: Default;
+}
+
+.media-nav-Recharge{
+    width:154px;
+    background: url(formatUrl('/img/pc/static/images/common/btn-bg-mid.png'));
+}
+
+.media-nav-withdraw{
+    width:154px;
+    background: url(formatUrl('/img/pc/static/images/common/btn-bg-mid.png'));
+}
+
+.media-nav-Conversion{
+    width:162px;
+    background: url(formatUrl('/img/pc/static/images/common/btn-bg-right.png')) no-repeat;
+}
+
+.media-btnGroup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    button.media-btn-guest {
+       font-size: 20px;
+       padding: 10px 50px;
+    }
+    button.media-btn-game {
+        font-size: 20px;
+        padding: 10px 50px;
+        position: relative;
+        img {
+            position: absolute;
+            top: -38px;
+            right: -36px;
+        }
+    }
+}
+
+
+
+
+
+

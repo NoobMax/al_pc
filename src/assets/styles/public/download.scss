@@ -1,0 +1,217 @@
+@import '../mixins';
+.download-container {
+    margin: 0 auto;
+    padding-top: 5px;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 5px;
+    position: relative;
+    display: flex;
+    max-height: 100%;
+}
+.mobile-page {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .mobile-jc img{
+    margin-top: 10vh;
+  }
+  .mobile-close{
+    position: absolute;
+    top: 10vh ;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 1400px) {
+    .mobile-jsc img {
+  
+       width: 900px;
+        height:600px!important;
+    }
+    .mobile-close{
+      right: 75px;
+    }
+  }
+  .mobile-jc{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20001;
+  }
+  .mobile-jsc{
+    width:1054px;
+    position: relative;
+    margin: 0 auto;
+  }
+  .mobile-content {
+    width: 1260px;
+    margin: 0 auto;
+    padding-top: 100px;
+    overflow: hidden;
+  }
+  .mobile-content .left-img  {
+    background: url('./assets/images/ct/mobile-left.png') no-repeat;
+    width: 542px;
+    height: 481px;
+    animation-duration: 1s;
+    animation-name: fadeInLeft;
+  }
+  .mobile-content .right-txt {
+    background: url('./assets/images/ct/mobile-right-txt.png') no-repeat;
+    width: 701px;
+    height: 332px;
+    animation-duration: 1s;
+    animation-name: fadeInRight;
+  }
+  .mobile-content .bottom {
+    /*height: 110px;*/
+    /*background-color: #eff6ff;*/
+    border-radius: 5px;
+    margin-top: 50px;
+  /*  padding: 30px;
+    padding-top: 0;*/
+    text-align: left;
+    position: relative;
+  }
+  .mobile-content .ico {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+  }
+  .mobile-content .ico-android {
+    animation-duration: .8s;
+    animation-name: bounceIn;
+  }
+  .mobile-content .ico-ios {
+    animation-duration: .8s;
+    animation-name: bounceIn;
+  }
+  .mobile-content .info {
+    margin-left: 10px;
+  }
+  .mobile-content .bottom h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  .mobile-content .bottom h3 {
+    font-size: 14px;
+    color: #666; 
+    margin: 10px 0;
+    line-height: 20px;
+  }
+  .mobile-content .bottom .el-row{
+    width: 82%;  
+     background: #eff6ff;
+     padding: 20px;
+  }
+  .mobile-content .bottom .grid-content{
+   
+  }
+  .mobile-content .bottom h4 {
+    font-size: 14px;
+    color: #999;
+  } 
+  .top{
+    position: relative;
+  }
+  .iosc,.adridc{
+    position: absolute;
+    left: 560px;
+    top: 390px;
+    width: 180px;
+    height: 50px;
+    background: #1c4fa8;
+    line-height: 50px;
+    font-size: 19px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .adridc{
+    left: 760px;
+  }
+  .wechat-code {
+    position: absolute;
+    right: 0px;
+    top: -50px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .wechat-code div {
+    width: 210px;
+    height: 210px;
+    background: url('./assets/images/ct/apk_download.jpg') no-repeat;
+    /*background:url('@{public_img}/images/moneybao.png') no-repeat;background-size:100% 100%;*/
+    background-size: contain;  
+  }
+  .mobile-page {
+    background:#deedff  url('./assets/images/ct/bg-home.jpg') no-repeat;
+  }
+  .mobile-content .ico-android {
+    background: url(formatUrl('/img/pc/static/images/common/ico-android.jpg')) no-repeat; 
+  }
+  .mobile-content .ico-ios {
+    background: url(formatUrl('/img/pc/static/images/common/ico-ios.jpg')) no-repeat;
+  }
+
+  @keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+  
+    0% {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+  
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      transform: scale3d(.9, .9, .9);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      transform: scale3d(.97, .97, .97);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }

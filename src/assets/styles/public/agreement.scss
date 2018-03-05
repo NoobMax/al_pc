@@ -1,0 +1,100 @@
+.agreement-dialog {
+&.el-dialog {
+  width: 1000px;
+}
+
+}
+  .agreement h4 {
+    text-align: right;
+    font-weight: normal;
+  }
+
+  .agreement-header {
+    height: 110px;
+    text-align: left;
+  }
+  .agreement-header .ico {
+    width: 70px;
+    height: 70px;
+    margin: 20px 20px 0 0;
+    float: left;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+  }
+  .agreement-header .welcome {
+    color: #666;
+    font-size: 16px;
+    float: left;
+    margin: 23px 0 0 0;
+  }
+  .agreement-header .welcome span {
+    color: #8c3edf;
+    margin: 0 3px;    
+  }
+  .agreement-header .welcome p:last-child {
+    color: #333;
+    font-size: 18px;
+  }
+  .agreement-content {
+    position: relative;
+    z-index: 100;
+    padding: 0 20px 0 20px;
+  }
+  .agreement-center {
+    background-color: #f1f3f8;   
+    padding: 15px;
+    border-radius: 8px;
+    /*overflow-y: auto;*/
+    color: #666;
+    /*width: 536px;*/
+    h4 {
+      text-align: right;
+    }
+  }
+  .agreement-dialog h2 {
+    background-color: #e1e2ee;    
+    height: 35px;
+    line-height: 35px;
+    color: #666;
+    padding-left: 15px;
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 16px;
+  } 
+  .agreement-dialog  p {
+    line-height: 30px;
+    text-align: left;
+  }
+  .agreement-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    button {
+      width: 100px;
+    }
+  }
+  .agreement-footer div.btn-pink {
+      border-radius:30px 0 0 30px;    
+    background-color: #ff9200;
+    color: #fff;
+  }
+  .agreement-footer div.btn-blue {
+    border-radius:0 30px 30px 0;  
+    margin-right:350px;
+    background-color: #1c4fa8;
+    color: #fff;
+  }
+  .btn-pink:hover {
+    background-color: #c0740d;
+  }
+  .btn-blue:hover {
+    background-color: #1561e5;
+  }
+ 
+
+  
